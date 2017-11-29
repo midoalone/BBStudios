@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="StudiosModule">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="core/studios.js"></script>
+    <script src="components/number-spinner/number-spinner.js"></script>
+    <script src="textStudio.js"></script>
+</head>
+<body>
+<div>
+    <div class="root" ng-controller="rootController">
+        <button ng-click="checker()">Checker</button>
+
+
+        <div ng-controller="textStudio as ctr">
+
+            <number-spinner name="'margin'"></number-spinner>
+            <number-spinner name="'padding'"></number-spinner>
+            <number-spinner name="'font-size'"></number-spinner>
+
+            <div id="container">
+Hello {{json['font-size'].value}}
+            </div>
+
+            <style>
+                #container {{ getStyle(json) }}
+            </style>
+
+        </div>
+    </div>
+
+
+
+</div>
+</body>
+</html>
