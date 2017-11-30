@@ -4,7 +4,7 @@ StudiosModule.
 component('numberSpinner', {
     templateUrl: './components/number-spinner/number-spinner.html',
     bindings: {
-        name: '<'
+        name: '@'
     },
     transclude: true,
     controller: function ($scope, $rootScope) {

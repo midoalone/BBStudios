@@ -1,0 +1,35 @@
+.bb-panel{
+  background: $darkColor;
+  margin: 15px 0;
+
+  .bb-panel-header{
+    background: $darkerColor;
+    color: #cccccc;
+    height: 45px;
+
+    .bb-panel-collapse{
+      float: left;
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-top: 6px;
+      background: $greenColor;
+      border-radius: 50%;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 28px;
+    }
+
+    .bb-panel-title{
+      margin: 0;
+      font-size: 20px;
+      line-height: 40px;
+    }
+  }
+
+  .bb-panel-body{
+    padding: 15px;
+  }
+}

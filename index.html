@@ -1,36 +1,45 @@
 <!doctype html>
 <html ng-app="StudiosModule">
 <head>
+    <!-- External Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/caf3f0eefa.css">
+
+    <!-- Core Studios -->
     <script src="core/studios.js"></script>
+    <script src="core/libraries/ng-slide-down/ng-slide-down.min.js"></script>
+    <link rel="stylesheet" href="core/studios.css">
+    <!-- Components -->
     <script src="components/number-spinner/number-spinner.js"></script>
+    <script src="components/panel/panel.js"></script>
+
+    <!-- Studios -->
     <script src="textStudio.js"></script>
 </head>
 <body>
-<div>
-    <div class="root" ng-controller="rootController">
-        <button ng-click="checker()">Checker</button>
-
-
-        <div ng-controller="textStudio as ctr">
-
-            <number-spinner name="'margin'"></number-spinner>
-            <number-spinner name="'padding'"></number-spinner>
-            <number-spinner name="'font-size'"></number-spinner>
-
-            <div id="container">
-Hello {{json['font-size'].value}}
-            </div>
-
-            <style>
-                #container {{ getStyle(json) }}
-            </style>
-
+<div class="container-fluid bb-container">
+    <div class="row">
+        <div class="col-md-12 bg-darker bb-studio-header">
+            Header
         </div>
     </div>
+    <div class="row bb-full-row">
+        <div class="col-md-6 bb-full-column">
 
+        </div>
+        <div class="col-md-6 bg-dark bb-full-column">
+            <div class="bb-overflow-area">
 
+                <panel title="Container">Container</panel>
+                <panel title="Background"></panel>
+                <panel title="Border & Radius"></panel>
+                <panel title="Shadow"></panel>
 
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

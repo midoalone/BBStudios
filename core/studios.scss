@@ -1,0 +1,56 @@
+// Variables
+$darkColor: #292929;
+$darkerColor: darken($darkColor, 20%);
+$greenColor: #467a3f;
+$activeColor: #cccccc;
+$inactiveColor: darken($activeColor, 20%);
+
+// Studios
+//@import "../components/**/*";
+@import "../components/panel/panel";
+
+// Global styles
+html, body{
+  height: 100%;
+}
+
+.bg-dark{
+  background: lighten($darkColor, 10%);
+  color: #fff;
+}
+
+.bg-darker{
+  background: $darkerColor;
+  color: #fff;
+}
+
+.bb-studio-header{
+  line-height: 50px;
+}
+
+.bb-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  .bb-full-row {
+    display: flex;
+    flex-direction: row;
+    min-height: 100%;
+    flex: 1;
+
+    .bb-full-column {
+      overflow: auto;
+      flex: 1;
+
+      .bb-overflow-area {
+        height: 100%;
+        position: absolute;
+        right: 15px;
+        left: 15px;
+      }
+    }
+  }
+}
+
+
