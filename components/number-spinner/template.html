@@ -1,3 +1,15 @@
 <div class="bb-number-spinner">
-    <input type="number" ng-model="count" ng-change="change($id)">
+    <label ng-if="$ctrl.title">{{$ctrl.title}}</label>
+
+    <div class="bb-number-spinner-container">
+        <input type="number" ng-model="$root.json[$ctrl.name][$id]">
+        <div class="bb-number-spinner-controls">
+            <button ng-click="$root.json[$ctrl.name][$id] = $root.json[$ctrl.name][$id] + 1">
+                <i class="fa fa-caret-up"></i>
+            </button>
+            <button ng-click="$root.json[$ctrl.name][$id] = $root.json[$ctrl.name][$id] - 1">
+                <i class="fa fa-caret-down"></i>
+            </button>
+        </div>
+    </div>
 </div>

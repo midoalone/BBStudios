@@ -1,3 +1,53 @@
-.bb-number-spinner{
-  color: $darkerColor;
+.bb-number-spinner {
+  clear: both;
+  line-height: 36px;
+  height: 36px;
+
+  label {
+    float: left;
+    width: 100px;
+    margin: 0;
+  }
+
+  input {
+    background: #434343;
+    border: none;
+    float: left;
+    width: 60px;
+    text-align: center;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  .bb-number-spinner-container {
+    position: relative;
+    width: 80px;
+    float: left;
+
+    .bb-number-spinner-controls {
+      width: 25px;
+      position: absolute;
+      right: 8px;
+      top: 0;
+    }
+
+    button {
+      color: #2d2d2d;
+      background: #5f5f5f;
+      border: none;
+      font-size: 17px;
+      line-height: 19px;
+      display: block;
+      padding: 0;
+      width: 100%;
+      border-radius: 0 0 4px 0;
+      outline: none;
+
+      &:first-child {
+        background: #505050;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
 }

@@ -6,11 +6,6 @@
         <h3 class="bb-panel-title">{{$ctrl.title}} {{json[$ctrl.name + '_test']}}</h3>
     </div>
     <div ng-slide-down="panelExpanded" keep-alive duration="0.2" style="height: 0;overflow: hidden;">
-        <div class="bb-panel-body" ng-transclude>
-            <number-spinner name="{{$ctrl.name}}_test"></number-spinner>
-            <number-spinner name="{{$ctrl.name}}_test_parent" parent="true"></number-spinner>
-            <number-spinner name="{{$ctrl.name}}_test_parent" parent="true"></number-spinner>
-            <number-spinner name="{{$ctrl.name}}_test_parent" parent="true"></number-spinner>
-        </div>
+        <div class="bb-panel-body" ng-transclude></div>
     </div>
 </div>
