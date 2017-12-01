@@ -1,12 +1,30 @@
 'use strict';
 
 var StudiosModule = angular.module('StudiosModule', ['ng-slide-down'])
-    .controller('rootController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+
+    .factory('studioService', function (){
+        return {
+
+        }
+    })
+
+    .run(function ($rootScope, studioService){
+        // Global json
         $rootScope.json = {};
+    })
+
+    .controller('rootController', function ($scope, $rootScope) {
 
         $rootScope.$watch(function(){
             return $rootScope.json;
         },function (){
-            $scope.json = $rootScope.json;
+            $('#json').val(JSON.stringify($rootScope.json));
         }, true);
-    }]);
+
+        $scope.save = function (){
+            angular.forEach($rootScope.json['shadow_test_parent'], function (value, key){
+                console.log(value, key);
+            });
+        }
+
+    });

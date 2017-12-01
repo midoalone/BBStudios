@@ -7,7 +7,8 @@ $inactiveColor: darken($activeColor, 20%);
 
 // Studios
 //@import "../components/**/*";
-@import "../components/panel/panel";
+@import "../components/panel/style";
+@import "../components/number-spinner/style";
 
 // Global styles
 html, body{

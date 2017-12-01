@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="StudiosModule">
+<html ng-app="StudiosModule" ng-controller="rootController">
 <head>
     <!-- External Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
@@ -12,8 +12,8 @@
     <script src="core/libraries/ng-slide-down/ng-slide-down.min.js"></script>
     <link rel="stylesheet" href="core/studios.css">
     <!-- Components -->
-    <script src="components/number-spinner/number-spinner.js"></script>
-    <script src="components/panel/panel.js"></script>
+    <script src="components/number-spinner/component.js"></script>
+    <script src="components/panel/component.js"></script>
 
     <!-- Studios -->
     <script src="textStudio.js"></script>
@@ -23,19 +23,23 @@
     <div class="row">
         <div class="col-md-12 bg-darker bb-studio-header">
             Header
+
+            <div class="pull-right">
+                <button class="btn btn-default" ng-click="save()">Save</button>
+            </div>
         </div>
     </div>
     <div class="row bb-full-row">
         <div class="col-md-6 bb-full-column">
-
+            <textarea name="" id="json" cols="30" rows="30" class="form-control"></textarea>
         </div>
         <div class="col-md-6 bg-dark bb-full-column">
             <div class="bb-overflow-area">
 
-                <panel title="Container">Container</panel>
-                <panel title="Background"></panel>
-                <panel title="Border & Radius"></panel>
-                <panel title="Shadow"></panel>
+                <panel title="Container" name="container">Container</panel>
+                <panel title="Background" name="background"></panel>
+                <panel title="Border & Radius" name="border"></panel>
+                <panel title="Shadow" name="shadow"></panel>
 
             </div>
         </div>

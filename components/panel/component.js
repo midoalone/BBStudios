@@ -2,18 +2,14 @@
 
 StudiosModule.
 component('panel', {
-    templateUrl: './components/panel/panel.html',
+    templateUrl: './components/panel/template.html',
     bindings: {
-        title: '@'
+        title: '@',
+        name: '@'
     },
     transclude: true,
     controller: function ($scope, $rootScope) {
         var self = this;
-
-        // Init
-        this.$onInit = function () {
-
-        };
 
         $scope.collapse_panel = function (){
 
