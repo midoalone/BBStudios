@@ -5,7 +5,8 @@ component('panel', {
     templateUrl: './components/panel/template.html',
     bindings: {
         title: '@',
-        name: '@'
+        name: '@',
+        collapsible: '@'
     },
     transclude: true,
     controller: function ($scope, $rootScope) {
