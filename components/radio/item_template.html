@@ -1,4 +1,6 @@
-<label>
-    <input type="radio" value="{{$ctrl.value}}" ng-model="$root.json[$ctrl.name]">
-    {{$ctrl.title}}
-</label>
+<div class="bb-radio-option">
+    <input type="radio" id="bb-radio-{{$id}}" value="{{value}}" ng-model="$root.json[name]" class="bb-input-radio-inline">
+    <label for="bb-radio-{{$id}}">
+        {{title}}
+    </label>
+</div>

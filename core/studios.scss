@@ -9,6 +9,8 @@ $inactiveColor: darken($activeColor, 20%);
 //@import "../components/**/*";
 @import "../components/panel/style";
 @import "../components/number-spinner/style";
+@import "../components/radio/style";
+@import "../components/checkbox/style";
 
 // Global styles
 html, body{
@@ -55,3 +57,96 @@ html, body{
 }
 
 
+/* Radio and Checkbox */
+.bb-input-radio-inline,
+.bb-input-checkbox-inline {
+  display: none;
+  cursor: pointer;
+
+  + label{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    color: white;
+
+    &:before{
+      background-color: #404040;
+      -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      content: '';
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      margin-right: 8px;
+    }
+  }
+
+  &:checked{
+    + label{
+
+      &:before{
+        background-color: #467a3f;
+      }
+    }
+  }
+}
+
+.bb-input-radio-inline + label:before {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.bb-input-checkbox-inline + label {
+  font-size: 18px;
+
+  &:before {
+    border-radius: 3px;
+  }
+}
+
+/* Switch checkbox */
+.bb-input-checkbox-switch {
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 33px;
+  height: 2px;
+  background-color: #585656;
+  position: relative;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #9C2E2E;
+    bottom: -7px;
+    left: 0;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:checked:after {
+    background-color: #467A3F;
+    left: 17px;
+  }
+
+  &:active, &:focus {
+    outline: none !important;
+  }
+}

@@ -1,4 +1,4 @@
-.bb-radio {
+.bb-checkbox {
   display: flex;
   flex-direction: row;
 
@@ -6,16 +6,16 @@
     flex: 2;
   }
 
-  .bb-radio-title {
+  .bb-checkbox-title {
     float: left;
     margin-right: 15px;
   }
 
-  .bb-radio-options {
+  .bb-checkbox-options {
     flex: 5;
     display: flex;
 
-    .bb-radio-option {
+    .bb-checkbox-option {
       flex:1;
 
       input{

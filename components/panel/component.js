@@ -6,14 +6,31 @@ StudiosModule
         bindings: {
             title: '@',
             name: '@',
-            collapsible: '@'
+            collapsible: '@',
+            enable: '@'
         },
         transclude: true,
         controller: function ($scope, $rootScope) {
             var self = this;
 
-            $scope.collapse_panel = function () {
+            this.$onInit = function (){
+                var isEnabled = true,
+                    isExpanded = undefined;
 
+                // Enabled / Disabled
+                if(self.enable){
+                    isEnabled = JSON.parse(self.enable.toLowerCase());
+                }
+
+                // Expanded / Collapsed
+                if(self.collapsible){
+                    isExpanded = JSON.parse(self.collapsible.toLowerCase());
+                }
+
+                $rootScope.json[self.name] = {
+                    enable: isEnabled,
+                    expanded: isExpanded
+                };
             }
         }
     });

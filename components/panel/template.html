@@ -1,18 +1,21 @@
 <div class="bb-panel" ng-if="$ctrl.collapsible">
     <div class="bb-panel-header">
-        <a href="javascript:" class="bb-panel-collapse" ng-click="panelExpanded = !panelExpanded">
-            <i class="fa" ng-class="{'fa-angle-down': panelExpanded, 'fa-angle-right': !panelExpanded}"></i>
+        <a href="javascript:" class="bb-panel-collapse" ng-click="$root.json[$ctrl.name].expanded = !$root.json[$ctrl.name].expanded">
+            <i class="fa" ng-class="{'fa-angle-down': $root.json[$ctrl.name].expanded, 'fa-angle-right': !$root.json[$ctrl.name].expanded}"></i>
         </a>
         <h3 class="bb-panel-title">{{$ctrl.title}}</h3>
+
+        <input type="checkbox" class="bb-input-checkbox-switch bb-panel-enable" ng-if="$ctrl.enable" ng-model="$root.json[$ctrl.name].enable">
     </div>
-    <div ng-slide-down="panelExpanded" keep-alive duration="0.2" style="height: 0;overflow: hidden;">
+    <div ng-slide-down="$root.json[$ctrl.name].expanded" keep-alive duration="0.2" style="height: 0;overflow: hidden;">
         <div class="bb-panel-body" ng-transclude></div>
     </div>
 </div>
 
-<div class="bb-panel" ng-if="!$ctrl.collapsible">
+<div class="bb-panel" ng-if="!$ctrl.collapsible" ng-class="{'disabled': !$root.json[$ctrl.name].enable}">
     <div class="bb-panel-header">
         <h3 class="bb-panel-title">{{$ctrl.title}}</h3>
+        <input type="checkbox" class="bb-input-checkbox-switch bb-panel-enable" ng-if="$ctrl.enable" ng-model="$root.json[$ctrl.name].enable">
     </div>
     <div class="bb-panel-body" ng-transclude></div>
 </div>

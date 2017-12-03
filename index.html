@@ -10,11 +10,13 @@
     <!-- Core Studios -->
     <script src="core/studios.js"></script>
     <script src="core/libraries/ng-slide-down/ng-slide-down.min.js"></script>
+    <script src="core/libraries/checklist-model/checklist-model.js"></script>
     <link rel="stylesheet" href="core/studios.css">
     <!-- Components -->
     <script src="components/number-spinner/component.js"></script>
     <script src="components/panel/component.js"></script>
     <script src="components/radio/component.js"></script>
+    <script src="components/checkbox/component.js"></script>
 
     <!-- Studios -->
     <script src="textStudio.js"></script>
@@ -37,17 +39,30 @@
         <div class="col-md-6 bg-dark bb-full-column">
             <div class="bb-overflow-area">
 
-                <panel title="Container" name="container" collapsible="true">Container</panel>
-                <panel title="Background" name="background"></panel>
-                <panel title="Border & Radius" name="border">
-                    <radio-group title="Container Height">
-                        <radio name="container_height_type" title="Auto" value="auto"></radio>
-                        <radio name="container_height_type" title="Fixed" value="fixed"></radio>
-                        <radio name="container_height_type" title="Range" value="range"></radio>
-                    </radio-group>
-                </panel>
-                <panel title="Shadow">
+                <panel title="Container" name="container" collapsible="false">Container</panel>
+
+                <panel title="Background" name="background" collapsible="true"></panel>
+
+                <panel title="Shadow" enable="true" name="shadow">
                     <number-spinner name="shadow_spread" title="Spread"></number-spinner>
+                </panel>
+
+                <panel title="Border & Radius" name="border">
+                    <radio-group title="Container Height" name="container_height">
+                        <radio title="Auto" value="auto"></radio>
+                        <radio title="Fixed" value="fixed"></radio>
+                        <radio title="Range" value="range"></radio>
+                    </radio-group>
+
+                    <checkbox-group title="Checkbox Group" name="checkbox_group">
+                        <checkbox title="Auto" value="auto"></checkbox>
+                        <checkbox title="Fixed" value="fixed"></checkbox>
+                        <checkbox title="Range" value="range" switch="true"></checkbox>
+                    </checkbox-group>
+
+                    <checkbox-group name="switch_box">
+                        <checkbox title="Switch Checkbox" value="true" switch="true"></checkbox>
+                    </checkbox-group>
                 </panel>
             </div>
         </div>

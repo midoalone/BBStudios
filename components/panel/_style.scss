@@ -6,6 +6,7 @@
     background: $darkerColor;
     color: #cccccc;
     height: 45px;
+    position: relative;
 
     .bb-panel-collapse{
       float: left;
@@ -27,9 +28,36 @@
       font-size: 20px;
       line-height: 40px;
     }
+
+    .bb-panel-enable{
+      position: absolute;
+      right: 20px;
+      top: 16px;
+      z-index: 2;
+    }
   }
 
   .bb-panel-body{
     padding: 15px;
+  }
+
+  &.disabled {
+    position: relative;
+
+    .bb-panel-header h3,
+    .bb-panel-collapse,
+    .bb-panel-body{
+      opacity: 0.4;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
   }
 }

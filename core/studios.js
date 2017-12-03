@@ -1,6 +1,6 @@
 'use strict';
 
-var StudiosModule = angular.module('StudiosModule', ['ng-slide-down'])
+var StudiosModule = angular.module('StudiosModule', ['ng-slide-down', 'checklist-model'])
 
     .factory('studioService', function (){
         return {
@@ -22,7 +22,7 @@ var StudiosModule = angular.module('StudiosModule', ['ng-slide-down'])
         }, true);
 
         $scope.save = function (){
-            angular.forEach($rootScope.json['shadow_test_parent'], function (value, key){
+            angular.forEach($rootScope.json, function (value, key){
                 console.log(value, key);
             });
         }

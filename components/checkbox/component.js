@@ -1,11 +1,11 @@
 'use strict';
 
 StudiosModule
-    .directive('radioGroup', function () {
+    .directive('checkboxGroup', function () {
         return {
             restrict: 'E',
             transclude: true,
-            templateUrl: './components/radio/template.html',
+            templateUrl: './components/checkbox/template.html',
             replace: true,
             scope: {
                 name: '@',
@@ -16,18 +16,21 @@ StudiosModule
             }
         };
     })
-    .directive('radio', function () {
+
+    .directive('checkbox', function () {
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: './components/radio/item_template.html',
+            templateUrl: './components/checkbox/item_template.html',
             scope: {
                 title: '@',
-                value: '@'
+                value: '@',
+                switch: '@'
             },
-            require: '^radioGroup',
+            require: '^checkboxGroup',
             link: function (scope,element,attrs,parentCtrl) {
                 scope.name = parentCtrl.name;
+                scope.id = attrs.id;
             }
         };
     });
