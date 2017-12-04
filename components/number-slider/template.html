@@ -1,0 +1,9 @@
+<div class="bb-number-slider">
+    <div class="bb-number-slider-label" ng-if="$ctrl.title">
+        <label>{{$ctrl.title}}</label>
+    </div>
+
+    <div class="bb-number-slider-container">
+        <rzslider rz-slider-model="$root.json[$ctrl.name][$id]" rz-slider-options="options"></rzslider>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 'use strict';
 
-var StudiosModule = angular.module('StudiosModule', ['ng-slide-down', 'checklist-model'])
+var StudiosModule = angular.module('StudiosModule', ['ng-slide-down', 'checklist-model', 'rzModule', 'color.picker'])
 
     .factory('studioService', function (){
         return {
@@ -11,6 +11,13 @@ var StudiosModule = angular.module('StudiosModule', ['ng-slide-down', 'checklist
     .run(function ($rootScope, studioService){
         // Global json
         $rootScope.json = {};
+        // Check if there is a saved settings
+        if(localStorage.getItem("BBStudioJSONSettings")){
+            var rootJSON = JSON.parse(localStorage.getItem("BBStudioJSONSettings"));
+            if(rootJSON){
+                $rootScope.json = rootJSON;
+            }
+        }
     })
 
     .controller('rootController', function ($scope, $rootScope) {
@@ -19,6 +26,8 @@ var StudiosModule = angular.module('StudiosModule', ['ng-slide-down', 'checklist
             return $rootScope.json;
         },function (){
             $('#json').val(JSON.stringify($rootScope.json));
+            // Save in localstorage
+            localStorage.setItem("BBStudioJSONSettings", JSON.stringify($rootScope.json));
         }, true);
 
         $scope.save = function (){

@@ -1,0 +1,35 @@
+.bb-dropdown {
+  display: flex;
+  flex-direction: row;
+
+  label {
+    flex: 1;
+  }
+
+  .bb-dropdown-select {
+    flex: 3;
+    position: relative;
+
+    select {
+      -webkit-appearance: none;
+      border: none;
+      background: #505050;
+      border-radius: 3px;
+      text-indent: 10px;
+      line-height: 30px;
+      min-width: 120px;
+      outline: none;
+      padding-right: 25px;
+      color: #a7a7a7;
+    }
+
+    i {
+      position: relative;
+      right: 22px;
+      top: 2px;
+      font-size: 18px;
+      color: #2d2d2d;
+    }
+  }
+
+}

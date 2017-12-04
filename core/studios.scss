@@ -5,12 +5,18 @@ $greenColor: #467a3f;
 $activeColor: #cccccc;
 $inactiveColor: darken($activeColor, 20%);
 
+// Libraries
+@import "libraries/angularjs-slider/rzslider";
+
 // Studios
-//@import "../components/**/*";
 @import "../components/panel/style";
+@import "../components/spinner-dropdown/style";
+@import "../components/dropdown/style";
 @import "../components/number-spinner/style";
+@import "../components/number-slider/style";
 @import "../components/radio/style";
 @import "../components/checkbox/style";
+@import "../components/color/style";
 
 // Global styles
 html, body{
@@ -55,7 +61,6 @@ html, body{
     }
   }
 }
-
 
 /* Radio and Checkbox */
 .bb-input-radio-inline,

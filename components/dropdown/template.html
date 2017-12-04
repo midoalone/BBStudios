@@ -1,0 +1,10 @@
+<div class="bb-dropdown">
+    <label ng-if="$ctrl.title">{{$ctrl.title}}</label>
+
+    <div class="bb-dropdown-select">
+        <select ng-model="$root.json[$ctrl.name][$id]">
+            <option ng-repeat="option in options">{{option}}</option>
+        </select>
+        <i class="fa fa-caret-down"></i>
+    </div>
+</div>

@@ -27,10 +27,12 @@ StudiosModule
                     isExpanded = JSON.parse(self.collapsible.toLowerCase());
                 }
 
-                $rootScope.json[self.name] = {
-                    enable: isEnabled,
-                    expanded: isExpanded
-                };
+                if(!$rootScope.json[self.name]){
+                    $rootScope.json[self.name] = {
+                        enable: isEnabled,
+                        expanded: isExpanded
+                    };
+                }
             }
         }
     });

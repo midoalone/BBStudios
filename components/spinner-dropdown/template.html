@@ -1,0 +1,18 @@
+<div class="bb-spinner-dropdown">
+    <label ng-if="$ctrl.title">{{$ctrl.title}}</label>
+
+    <div class="bb-spinner-dropdown-container">
+        <input type="number" ng-model="$root.json[$ctrl.name][$id]['number']">
+        <select ng-model="$root.json[$ctrl.name][$id]['unit']">
+            <option ng-repeat="option in options">{{option}}</option>
+        </select>
+        <div class="bb-spinner-dropdown-controls">
+            <button ng-click="$root.json[$ctrl.name][$id]['number'] = $root.json[$ctrl.name][$id]['number'] + 1">
+                <i class="fa fa-caret-up"></i>
+            </button>
+            <button ng-click="$root.json[$ctrl.name][$id]['number'] = $root.json[$ctrl.name][$id]['number'] - 1">
+                <i class="fa fa-caret-down"></i>
+            </button>
+        </div>
+    </div>
+</div>

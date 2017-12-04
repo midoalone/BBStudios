@@ -2,6 +2,7 @@
   <dictionary name="mac">
     <words>
       <w>attrs</w>
+      <w>dropdown</w>
       <w>transclude</w>
     </words>
   </dictionary>

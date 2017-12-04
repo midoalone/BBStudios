@@ -1,0 +1,7 @@
+<div class="bb-color-picker">
+    <label ng-if="$ctrl.title">{{$ctrl.title}}</label>
+
+    <div class="bb-color-picker-container">
+        <color-picker ng-model="$root.json[$ctrl.name][$id]" options="{format: 'rgb'}"></color-picker>
+    </div>
+</div>
