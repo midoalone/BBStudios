@@ -41,45 +41,83 @@
             </div>
         </div>
     </div>
-    <div class="row bb-full-row">
+    <div class="row bb-full-row" ng-controller="textStudio">
         <div class="col-md-6 bb-full-column">
+            <div class="demo">
+                Lorem ipsum dolor sit amet
+            </div>
+            <style>
+                .demo {{demoStyle()}}
+            </style>
             <textarea name="" id="json" cols="30" rows="30" class="form-control"></textarea>
         </div>
         <div class="col-md-6 bg-dark bb-full-column">
             <div class="bb-overflow-area">
 
-                <panel title="Container" name="container" collapsible="false">
-                    <dropdown name="display" title="Display" options="['block', 'flex', 'none', 'table', 'table-cell']"></dropdown>
-                    <color name="backround-color" title="Background Color"></color>
+                <panel title="Basic" name="basic" collapsible="true">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <dropdown name="font-family" options="['Georgia, serif', 'Times New Roman', 'Arial', 'Helvetica', 'Tahoma', 'Trebuchet MS', 'Verdana']" class="pull-left"></dropdown>
+
+                            <dropdown name="text-transform" options="['capitalize', 'lowercase', 'uppercase']" class="pull-left"></dropdown>
+
+                            <dropdown name="text-decoration" options="['none', 'underline', 'line-through', 'overline']" class="pull-left"></dropdown>
+
+                            <color name="color" class="pull-left"></color>
+                            <hr>
+                        </div>
+                        <div class="col-md-12">
+                            <number-spinner name="font-size" title="Font Size" class="pull-left"></number-spinner>
+                            <number-spinner name="line-height" title="Line height" class="pull-left"></number-spinner>
+                            <number-spinner name="letter-spacing" title="Letter Spacing" class="pull-left"></number-spinner>
+                            <hr>
+                        </div>
+                        <div class="col-md-12">
+                            <checkbox-group name="font-weight" class="pull-left" style="margin-right: 20px;">
+                                <checkbox title="Bold" value="bold"></checkbox>
+                            </checkbox-group>
+
+                            <checkbox-group name="font-style" class="pull-left">
+                                <checkbox title="Italic" value="italic"></checkbox>
+                            </checkbox-group>
+                            <hr>
+                        </div>
+                        <div class="col-md-12">
+                            <radio-group title="Text Align" name="text-align">
+                                <radio title="Center" value="center"></radio>
+                                <radio title="Left" value="left"></radio>
+                                <radio title="Right" value="right"></radio>
+                                <radio title="Justify" value="justify"></radio>
+                            </radio-group>
+                        </div>
+                    </div>
                 </panel>
 
-                <panel title="Background" name="background" collapsible="true">
-                    <number-spinner name="shadow_spread" title="Spread"></number-spinner>
-                    <spinner-dropdown name="margin" title="Margin"></spinner-dropdown>
-                    <spinner-dropdown name="margin" title="Padding" options="['px', 'auto']"></spinner-dropdown>
+                <panel title="Shadow" name="shadow" collapsible="false">
+                    <div class="row">
+                        <div class="col-md-12" ng-repeat="i in $root.json.shadows" style="margin-bottom: 10px;">
+                            <color name="shadow-color" class="pull-left" style="margin-right: 20px;"></color>
+                            <number-spinner name="shadow-x" title="offsetX" class="pull-left"></number-spinner>
+                            <number-spinner name="shadow-y" title="offsetY" class="pull-left"></number-spinner>
+                            <number-spinner name="shadow-blur" title="Blur" class="pull-left"></number-spinner>
+
+                            <a href="javascript:" ng-click="$root.json.shadows.pop()" class="btn btn-sm btn-danger">
+                                <i class="fa fa-close"></i>
+                            </a>
+                        </div>
+
+                        <div class="col-md-12">
+                            <a href="javascript:" ng-click="$root.json.shadows.push([])" class="btn btn-sm btn-success">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        </div>
+
+                    </div>
                 </panel>
 
-                <panel title="Shadow" enable="true" name="shadow">
-                    <number-slider name="shadow_opacity" options="{floor: 1, ceil: 50}"></number-slider>
-                    <number-slider name="shadow_opacity" options="{floor: 1, ceil: 50, vertical: true}"></number-slider>
-                </panel>
-
-                <panel title="Border & Radius" name="border">
-                    <radio-group title="Container Height" name="container_height">
-                        <radio title="Auto" value="auto"></radio>
-                        <radio title="Fixed" value="fixed"></radio>
-                        <radio title="Range" value="range"></radio>
-                    </radio-group>
-
-                    <checkbox-group title="Checkbox Group" name="checkbox_group">
-                        <checkbox title="Auto" value="auto"></checkbox>
-                        <checkbox title="Fixed" value="fixed"></checkbox>
-                        <checkbox title="Range" value="range" switch="true"></checkbox>
-                    </checkbox-group>
-
-                    <checkbox-group name="switch_box">
-                        <checkbox title="Switch Checkbox" value="true" switch="true"></checkbox>
-                    </checkbox-group>
+                <panel title="Animation" name="animation" collapsible="false" enable="false">
+                    <dropdown name="animation" title="Animation Class" options="['swing', 'shake', 'rubberband']"></dropdown>
                 </panel>
             </div>
         </div>
