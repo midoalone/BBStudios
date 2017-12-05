@@ -1,4 +1,4 @@
-StudiosModule
+angular.module('StudiosModule')
     .directive('checkboxGroup', function () {
         return {
             restrict: 'E',

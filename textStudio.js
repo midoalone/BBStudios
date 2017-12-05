@@ -1,4 +1,5 @@
-StudiosModule.controller('textStudio', function ($scope, $rootScope) {
+angular.module('StudiosModule')
+    .controller('textStudio', function ($scope, $rootScope) {
     $scope = $scope.$parent;
 
     if(! $rootScope.json.shadows)
@@ -10,7 +11,7 @@ StudiosModule.controller('textStudio', function ($scope, $rootScope) {
 
         if(json['font-family']) style += 'font-family:' + firstValue(json['font-family']) + ';';
         if(json['font-weight']) style += 'font-weight:' + firstValue(json['font-weight']) + ';';
-        if(json['font-style']) style += 'font-style:' + firstValue(json['font-style']) + ';';
+        if(firstValue(json['font-style'])) style += 'font-style:' + firstValue(json['font-style']) + ';';
         if(json['text-decoration']) style += 'text-decoration:' + firstValue(json['text-decoration']) + ';';
         if(json['text-transform']) style += 'text-transform:' + firstValue(json['text-transform']) + ';';
         if(json['font-size']) style += 'font-size:' + firstValue(json['font-size']) + 'px;';
@@ -41,5 +42,6 @@ StudiosModule.controller('textStudio', function ($scope, $rootScope) {
         return $rootScope.json;
     },function (){
         $scope.demoStyle();
+        $rootScope.css = '.class' + $scope.demoStyle();
     }, true);
 });

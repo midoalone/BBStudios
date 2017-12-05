@@ -1,4 +1,4 @@
-StudiosModule
+angular.module('StudiosModule')
     .component('spinnerDropdown', {
         templateUrl: 'spinner-dropdown/template.html',
         bindings: {

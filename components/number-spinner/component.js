@@ -1,4 +1,4 @@
-StudiosModule
+angular.module('StudiosModule')
     .component('numberSpinner', {
         templateUrl: 'number-spinner/template.html',
         bindings: {

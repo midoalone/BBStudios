@@ -1,4 +1,4 @@
-StudiosModule
+angular.module('StudiosModule')
     .component('dropdown', {
         templateUrl: 'dropdown/template.html',
         bindings: {

@@ -1,4 +1,4 @@
-StudiosModule
+angular.module('StudiosModule')
     .component('numberSlider', {
         templateUrl: 'number-slider/template.html',
         bindings: {

@@ -4,31 +4,17 @@
     <!-- External Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/caf3f0eefa.css">
 
-    <!-- Core Studios -->
-    <!--<script src="core/studios.js"></script>-->
-    <!--<script src="core/libraries/ng-slide-down/ng-slide-down.min.js"></script>-->
-    <!--<script src="core/libraries/checklist-model/checklist-model.js"></script>-->
-    <!--<script src="core/libraries/angularjs-slider/rzslider.min.js"></script>-->
-    <!--<script src="core/libraries/angular-color-picker/tinycolor-min.js"></script>-->
-    <!--<script src="core/libraries/angular-color-picker/angularjs-color-picker.min.js"></script>-->
-
-    <!--<link rel="stylesheet" href="core/libraries/angular-color-picker/angularjs-color-picker.min.css">-->
+    <!-- Core -->
     <link rel="stylesheet" href="core/studios.css">
 
-    <!-- Components -->
-    <script src="public/studios.js"></script>
-    <!--<script src="public/components.min.js"></script>-->
-    <!--<script src="components/number-spinner/component.js"></script>-->
-    <!--<script src="components/number-slider/component.js"></script>-->
-    <!--<script src="components/spinner-dropdown/component.js"></script>-->
-    <!--<script src="components/dropdown/component.js"></script>-->
-    <!--<script src="components/panel/component.js"></script>-->
-    <!--<script src="components/radio/component.js"></script>-->
-    <!--<script src="components/checkbox/component.js"></script>-->
-    <!--<script src="components/color/component.js"></script>-->
+    <script src="public/libraries.js"></script>
+    <script src="core/studios.js"></script>
+    <script src="public/templates.js"></script>
+    <script src="public/components.js"></script>
 
     <!-- Studios -->
     <script src="textStudio.js"></script>
@@ -40,7 +26,17 @@
             Header
 
             <div class="pull-right">
-                <button class="btn btn-default" ng-click="save()">Save</button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Download <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="javascript:" ng-click="download('json')">JSON</a></li>
+                        <li><a href="javascript:" ng-click="download('css')">CSS</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-success" ng-click="save()">Save</button>
+                <button class="btn btn-default" ng-click="import()">Import</button>
             </div>
         </div>
     </div>

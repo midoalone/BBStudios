@@ -1,4 +1,4 @@
-StudiosModule
+angular.module('StudiosModule')
     .component('color', {
         templateUrl: 'color/template.html',
         bindings: {

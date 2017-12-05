@@ -17,6 +17,19 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest(jsDest));
 });
 
+gulp.task('libraries', function () {
+    return gulp.src([
+        'core/libraries/ng-slide-down/ng-slide-down.min.js',
+        'core/libraries/checklist-model/checklist-model.js',
+        'core/libraries/angularjs-slider/rzslider.min.js',
+        'core/libraries/angular-color-picker/tinycolor-min.js',
+        'core/libraries/angular-color-picker/angularjs-color-picker.min.js'
+    ])
+        .pipe(uglify({mangle: false}))
+        .pipe(concat('libraries.js'))
+        .pipe(gulp.dest(jsDest));
+});
+
 gulp.task('templates', function () {
     return gulp.src('components/**/*.html')
         .pipe(templateCache('templates.js', {
@@ -27,11 +40,7 @@ gulp.task('templates', function () {
 
 gulp.task('build', function () {
     return gulp.src([
-        'core/libraries/ng-slide-down/ng-slide-down.min.js',
-        'core/libraries/checklist-model/checklist-model.js',
-        'core/libraries/angularjs-slider/rzslider.min.js',
-        'core/libraries/angular-color-picker/tinycolor-min.js',
-        'core/libraries/angular-color-picker/angularjs-color-picker.min.js',
+        'public/libraries.js',
         'core/studios.js',
         'public/templates.js',
         'public/components.js'
@@ -43,6 +52,6 @@ gulp.task('build', function () {
 
 gulp.task('default', gulp.series(function (done) {
     // gulp.series('scripts', 'templates')();
-    gulp.series('scripts', 'templates', 'build')();
+    gulp.series('scripts', 'libraries', 'templates', 'build')();
     done();
 }));

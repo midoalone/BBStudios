@@ -1,4 +1,4 @@
-StudiosModule
+angular.module('StudiosModule')
     .directive('radioGroup', function () {
         return {
             restrict: 'E',

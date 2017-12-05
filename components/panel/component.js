@@ -1,4 +1,4 @@
-StudiosModule
+angular.module('StudiosModule')
     .component('panel', {
         templateUrl: 'panel/template.html',
         bindings: {
