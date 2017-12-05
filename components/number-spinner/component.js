@@ -1,8 +1,6 @@
-'use strict';
-
 StudiosModule
     .component('numberSpinner', {
-        templateUrl: './components/number-spinner/template.html',
+        templateUrl: 'number-spinner/template.html',
         bindings: {
             name: '@',
             title: '@'

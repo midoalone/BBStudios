@@ -1,5 +1,3 @@
-'use strict';
-
 var StudiosModule = angular.module('StudiosModule', ['ng-slide-down', 'checklist-model', 'rzModule', 'color.picker'])
 
     .factory('studioService', function (){

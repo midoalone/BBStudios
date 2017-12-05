@@ -7,6 +7,7 @@ $inactiveColor: darken($activeColor, 20%);
 
 // Libraries
 @import "libraries/angularjs-slider/rzslider";
+@import "libraries/angular-color-picker/angularjs-color-picker";
 
 // Studios
 @import "../components/panel/style";

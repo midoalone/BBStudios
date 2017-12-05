@@ -1,11 +1,9 @@
-'use strict';
-
 StudiosModule
     .directive('checkboxGroup', function () {
         return {
             restrict: 'E',
             transclude: true,
-            templateUrl: './components/checkbox/template.html',
+            templateUrl: 'checkbox/template.html',
             replace: true,
             scope: {
                 name: '@',
@@ -21,7 +19,7 @@ StudiosModule
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: './components/checkbox/item_template.html',
+            templateUrl: 'checkbox/item_template.html',
             scope: {
                 title: '@',
                 value: '@',

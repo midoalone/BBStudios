@@ -1,8 +1,6 @@
-'use strict';
-
 StudiosModule
     .component('dropdown', {
-        templateUrl: './components/dropdown/template.html',
+        templateUrl: 'dropdown/template.html',
         bindings: {
             name: '@',
             title: '@',

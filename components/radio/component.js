@@ -1,11 +1,9 @@
-'use strict';
-
 StudiosModule
     .directive('radioGroup', function () {
         return {
             restrict: 'E',
             transclude: true,
-            templateUrl: './components/radio/template.html',
+            templateUrl: 'radio/template.html',
             replace: true,
             scope: {
                 name: '@',
@@ -20,7 +18,7 @@ StudiosModule
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: './components/radio/item_template.html',
+            templateUrl: 'radio/item_template.html',
             scope: {
                 title: '@',
                 value: '@'

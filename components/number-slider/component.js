@@ -1,8 +1,6 @@
-'use strict';
-
 StudiosModule
     .component('numberSlider', {
-        templateUrl: './components/number-slider/template.html',
+        templateUrl: 'number-slider/template.html',
         bindings: {
             name: '@',
             title: '@',

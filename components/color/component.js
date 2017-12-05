@@ -1,8 +1,6 @@
-'use strict';
-
 StudiosModule
     .component('color', {
-        templateUrl: './components/color/template.html',
+        templateUrl: 'color/template.html',
         bindings: {
             name: '@',
             title: '@',

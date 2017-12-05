@@ -1,8 +1,6 @@
-'use strict';
-
 StudiosModule
     .component('spinnerDropdown', {
-        templateUrl: './components/spinner-dropdown/template.html',
+        templateUrl: 'spinner-dropdown/template.html',
         bindings: {
             name: '@',
             title: '@',
